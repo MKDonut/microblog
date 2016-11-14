@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Post</title>
+</head>
+<body>
+	{% for item in blogs %}
+		{% item.description %}
+	<form action="/create_post/" methods="post">
+	{% csrf_token %}
+		<p>Post your blog:</p><textarea placeholder="enter blog" name="description" rows="4" cols="25"></textarea> 
+		<input type="submit" name="Submit">
+	</form>
+
+</body>
+</html>
